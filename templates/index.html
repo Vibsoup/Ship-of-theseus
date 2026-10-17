@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive archive exploring how people judge identity through change.">
+  <title>Same, But Different — Illustrated Identity Studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="library-shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="The Theseus Archive home">
+        <span class="brand-seal" aria-hidden="true">S?</span>
+        <span class="brand-copy"><strong>SAME, BUT DIFFERENT</strong><small>ILLUSTRATED STUDIES OF IDENTITY</small></span>
+      </a>
+      <div class="masthead-meta"><span class="status-dot"></span> A LITTLE QUESTION ABOUT EVERYTHING <span class="meta-divider">/</span> NO. 001</div>
+    </header>
+
+    <div class="page-layout">
+      <aside class="catalogue" aria-label="Archive catalogue">
+        <p class="side-label">THE COLLECTION</p>
+        <div class="catalogue-rule"></div>
+        <a class="catalogue-link active" href="#experiment"><span class="catalogue-index">01</span><span><strong>The Ship of Theseus</strong><small>Identity &amp; material</small></span></a>
+        <a class="catalogue-link" href="#continuity"><span class="catalogue-index">02</span><span><strong>Continuity</strong><small>Time, change &amp; identity</small></span></a>
+        <a class="catalogue-link" href="#memory"><span class="catalogue-index">03</span><span><strong>Memory &amp; self</strong><small>Memory, personality &amp; identity</small></span></a>
+        <div class="side-note">
+          <span class="note-mark">✳</span>
+          <p>“What persists when everything changes?”</p>
+          <small>THERE IS MORE THAN ONE WAY TO SEE IT</small>
+        </div>
+        <div class="catalogue-bottom"><span>COLLECTION 001</span><span>OPEN ACCESS</span></div>
+      </aside>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div class="breadcrumb"><span>ARCHIVE</span><span>›</span><span>THOUGHT EXPERIMENTS</span><span>›</span><span class="current">001</span></div>
+          <div class="intro-kicker"><span class="kicker-line"></span> AN ILLUSTRATED EXPERIMENT IN IDENTITY</div>
+          <h1 id="page-title">How much can you change<br>and still be <em>you?</em></h1>
+          <p class="lede">A ship loses its old parts one by one. Its shape changes. Its story stays. At what point would you call it a different ship?</p>
+          <div class="entry-meta"><span>ENTRY NO. <strong>001—TH</strong></span><span>SUBJECT <strong>THE SHIP OF THESEUS</strong></span><span>READING TIME <strong>3 MIN</strong></span></div>
+        </section>
+
+        <section class="experiment" id="experiment" aria-labelledby="experiment-title">
+          <div class="section-heading">
+            <div><p class="eyebrow">STORY 001 <span>·</span> TRY IT YOURSELF</p><h2 id="experiment-title">The ship of Theseus</h2></div>
+            <div class="folio-stamp"><span>FIG.</span><strong>01</strong></div>
+          </div>
+
+          <div class="ship-stage" id="ship-stage" data-replacement="50" aria-label="Illustration of a ship changing from wood to metal">
+            <div class="stage-paper-texture"></div>
+            <div class="plate-caption"><span>PLATE I</span><span>VESSEL UNDER TRANSFORMATION</span></div>
+            <svg class="ship-art" viewBox="0 0 640 300" role="img" aria-label="A ship with wooden and metallic parts">
+              <defs>
+                <linearGradient id="sea" x1="0" x2="1"><stop offset="0" stop-color="#8b9d8b"/><stop offset="1" stop-color="#b6bda8"/></linearGradient>
+                <linearGradient id="metal" x1="0" x2="1"><stop offset="0" stop-color="#a5b1a8"/><stop offset="1" stop-color="#667e77"/></linearGradient>
+              </defs>
+              <path d="M55 235 Q150 224 240 235 T425 235 T600 235" fill="none" stroke="url(#sea)" stroke-width="2.5" opacity=".9"/>
+              <path d="M95 208 L545 208 L492 258 Q320 282 151 258 Z" class="hull-wood"/>
+              <path d="M320 208 L545 208 L492 258 Q405 270 320 270 Z" class="hull-metal"/>
+              <path d="M315 67 L315 208" stroke="#65533d" stroke-width="7" stroke-linecap="round"/>
+              <path d="M315 76 L190 183 L315 183 Z" class="sail-wood"/>
+              <path d="M326 88 L442 183 L326 183 Z" class="sail-metal"/>
+              <path d="M190 183 L315 183 L315 76 Z" fill="none" stroke="#b9a78b" stroke-width="1.5" opacity=".9"/>
+              <path d="M326 88 L442 183 L326 183 Z" fill="none" stroke="#d6ded2" stroke-width="1.5" opacity=".8"/>
+              <path d="M102 213 L538 213 M125 229 L520 229 M145 244 L506 244" stroke="#e6cda7" stroke-width="2" opacity=".55"/>
+              <g class="metal-details" fill="none" stroke="#dce5dc" stroke-width="2"><path d="M354 218 L354 252 M392 218 L392 259 M430 218 L430 261 M468 218 L468 256"/><path d="M365 225 L478 225"/></g>
+              <circle cx="315" cy="62" r="4" fill="#9b633e"/>
+            </svg>
+            <div class="stage-labels"><span>ORIGINAL MATERIAL</span><span id="stage-percent">50% REPLACED</span></div>
+          </div>
+
+          <div class="control-block">
+            <div class="range-title"><label for="replacement"><span class="control-index">A.</span> Components replaced</label><output id="replacement-output" for="replacement">50%</output></div>
+            <input id="replacement" type="range" min="0" max="100" step="10" value="50">
+            <div class="range-ends"><span>0% <i>·</i> ORIGINAL VESSEL</span><span>100% <i>·</i> ALL PARTS REPLACED</span></div>
+          </div>
+
+          <div class="question-intro"><span class="question-rule"></span><p>Alter the conditions of the thought experiment. Notice what changes your answer.</p></div>
+          <div class="scenario-grid">
+            <fieldset class="question-card">
+              <legend><span class="question-number">01</span><span>How did the change happen?</span></legend>
+              <label class="choice"><input type="radio" name="continuity" value="continuous" checked><span><b>Gradually</b><small>Parts replaced one at a time while in use.</small></span></label>
+              <label class="choice"><input type="radio" name="continuity" value="interrupted"><span><b>In stages</b><small>The ship was dismantled and rebuilt later.</small></span></label>
+            </fieldset>
+            <fieldset class="question-card">
+              <legend><span class="question-number">02</span><span>Does its history remain?</span></legend>
+              <label class="choice"><input type="radio" name="history_preserved" value="yes" checked><span><b>Preserved</b><small>Its records and history remain intact.</small></span></label>
+              <label class="choice"><input type="radio" name="history_preserved" value="no"><span><b>Lost</b><small>Its records and history are lost.</small></span></label>
+            </fieldset>
+            <fieldset class="question-card">
+              <legend><span class="question-number">03</span><span>Does it look the same?</span></legend>
+              <label class="choice"><input type="radio" name="appearance_preserved" value="yes" checked><span><b>Unchanged</b><small>Its overall appearance is preserved.</small></span></label>
+              <label class="choice"><input type="radio" name="appearance_preserved" value="no"><span><b>Transformed</b><small>Its appearance has changed noticeably.</small></span></label>
+            </fieldset>
+            <fieldset class="question-card">
+              <legend><span class="question-number">04</span><span>Does it serve the same purpose?</span></legend>
+              <label class="choice"><input type="radio" name="function_preserved" value="yes" checked><span><b>Still sails</b><small>It works as it did before.</small></span></label>
+              <label class="choice"><input type="radio" name="function_preserved" value="no"><span><b>Cannot sail</b><small>It can no longer perform its old function.</small></span></label>
+            </fieldset>
+          </div>
+
+          <div class="judgment">
+            <div class="judgment-heading"><p class="eyebrow">YOUR MARGIN NOTE</p><span class="anonymous-mark">ANONYMOUS RESPONSE</span></div>
+            <h3>Is it still the same ship?</h3>
+            <p class="judgment-prompt">There is no answer key. Record the judgment you actually hold.</p>
+            <div class="rating-line"><span>Definitely not</span><output id="identity-output" for="identity">65 / 100</output><span>Definitely yes</span></div>
+            <input id="identity" type="range" min="0" max="100" step="5" value="65" aria-label="How strongly do you believe this is the same ship?">
+            <div class="range-ends"><span>0 <i>·</i> DIFFERENT</span><span>50 <i>·</i> UNCERTAIN</span><span>100 <i>·</i> SAME</span></div>
+            <label class="explanation-label" for="explanation">What mattered most in your decision? <span>OPTIONAL</span></label>
+            <textarea id="explanation" maxlength="500" rows="3" placeholder="A note for the archive…"></textarea>
+            <div class="submit-row"><p>Your response is stored locally for this research prototype.<br>No name or email is requested.</p><button id="submit-response" type="button">File this judgment <span aria-hidden="true">↗</span></button></div>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="continuity-chapter" id="continuity" aria-labelledby="continuity-title">
+          <p class="eyebrow">STUDY 002 · TIME &amp; CHANGE</p>
+          <h2 id="continuity-title">Does a thing remain itself through time?</h2>
+          <p class="chapter-intro">We recognise things partly through their histories. A repaired ship, a childhood home, a well-used book: their materials change, but the story connecting yesterday to today may remain.</p>
+          <div class="continuity-grid">
+            <article class="continuity-card"><span class="chapter-number">01</span><h3>Gradual change</h3><p>One plank is replaced. Then another. The ship remains in use throughout the process.</p><p class="chapter-question">Does an unbroken history preserve identity?</p></article>
+            <article class="continuity-card"><span class="chapter-number">02</span><h3>Interrupted existence</h3><p>The ship is dismantled, left apart, and assembled again later using replacement parts.</p><p class="chapter-question">Does a break in its existence change what it is?</p></article>
+            <article class="continuity-card"><span class="chapter-number">03</span><h3>Lost history</h3><p>Imagine that every record of the ship disappears, even though the vessel itself continues to sail.</p><p class="chapter-question">Can something remain the same if its past is forgotten?</p></article>
+          </div>
+          <div class="continuity-note"><p class="eyebrow">A QUESTION WITHOUT AN ANSWER KEY</p><p>Continuity is one possible basis for identity, not a guaranteed solution. Two people can know the same history and still disagree about whether the object is the same one.</p></div>
+        </section>
+
+        <section class="memory-chapter" id="memory" aria-labelledby="memory-title">
+          <p class="eyebrow">STUDY 003 · MEMORY &amp; SELF</p>
+          <h2 id="memory-title">If your memories changed, would you still be you?</h2>
+          <p class="chapter-intro">We often tell the story of who we are through what we remember. But memory is imperfect, identity changes, and forgetting does not necessarily make someone a different person.</p>
+          <div class="memory-feature">
+            <span class="chapter-number">A QUESTION OF THE SELF</span>
+            <h3>Imagine waking up with a different past.</h3>
+            <p>You have the same body, the same name, and the same place in the world. But some of your personal memories are missing. Other people remember experiences you cannot recall.</p>
+            <p class="chapter-question">Which parts of you would remain, even if your memories changed?</p>
+          </div>
+          <div class="memory-grid">
+            <article class="memory-card"><span class="chapter-number">01</span><h3>Memory</h3><p>Your memories connect your present self to your past experiences.</p><p class="chapter-question">If you forgot an important event, would it change who you are?</p></article>
+            <article class="memory-card"><span class="chapter-number">02</span><h3>Personality</h3><p>Your habits, values, and reactions shape how you experience the world.</p><p class="chapter-question">If your personality changed over time, would you still be you?</p></article>
+            <article class="memory-card"><span class="chapter-number">03</span><h3>Relationships</h3><p>Other people may remember parts of your life that you have forgotten.</p><p class="chapter-question">Can relationships preserve a sense of self beyond memory?</p></article>
+          </div>
+          <div class="memory-note"><p class="eyebrow">LEAVE A NOTE FOR THE ARCHIVE</p><p>Memory is one theory of personal identity, not the only one. Bodily continuity, psychological traits, relationships, and lived experience may matter in different ways.</p></div>
+        </section>
+
+        <section class="bottom-grid" id="research">
+          <article class="research-note"><p class="eyebrow">FROM THE RESEARCH DESK</p><h2>Identity is not a percentage.</h2><p>We are examining whether material, memory, appearance, function, and continuity shape how people judge sameness. The archive collects judgments; it does not decide what identity truly is.</p><span class="signature">— THE EDITORS</span></article>
+          <article class="response-ledger"><p class="eyebrow">THE COMMON NOTEBOOK</p><div class="count" id="response-count">—</div><p>people have left a thought in this notebook</p><a href="/download/responses.csv">Open the data ledger <span>↗</span></a></article>
+        </section>
+        <footer class="page-footer"><span>SAME, BUT DIFFERENT <i>·</i> STORY 001</span><span>A RESEARCH PROTOTYPE, NOT A VALIDATED PSYCHOLOGICAL INSTRUMENT. REVIEW CONSENT, PRIVACY, AND ETHICS BEFORE PUBLIC DEPLOYMENT.</span></footer>
+      </main>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
